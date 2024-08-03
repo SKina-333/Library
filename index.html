@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Indie+Flower&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <title>Library</title>
 </head>
 <body>
     
+    <div class="container">
+        <div class="navigation">
+            <p class="title">My Library</p>
+            <ul class="nav-button">
+                <li><button class="add-book" id="myBtn">Add new book</button></li>
+                <li><button class="login">Log in</button></li>
+            </ul>
+           
+        </div>
+        <div class="content" id="content">
+            <div class="box">
+                <div class="left-side">
+                    <p class="author">Author</p>
+                </div>
+                <div class="right-side">
+                    <div class="top">
+                        <p class="title">Title</p>  
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <p class="button">[Preview]</p>
+                    </div>
+                    <div class="buttom">
+                            <p class="page-count">100</p>
+                    </div>
+                </div>          
+            </div>
+        </div>
+    </div>
+    
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-container">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="form-head">Enter book details:</p>
+
+                <form id="bookForm">
+                    <label for="author">Author:</label>
+                    <input type="text" id="authorName" name="author" required><br>
+                    <label for="title">Book title:</label>
+                    <input type="text" id="bookTitle" name="title" required><br>
+                    <label for="pageCount">Page count:</label>
+                    <input type="number" id="count" name="pageCount" required><br>
+
+                    <button type="button" onclick="addToArray()">Submit</button>
+                </form>
+            </div>   
+        </div>
+    
+    </div>
+
+    <script src="javascript.js"></script>
 </body>
 </html>
