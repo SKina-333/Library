@@ -46,7 +46,7 @@ function displayBook() {
 
   contentBox.innerHTML = "";
 
-  libraryArray.forEach((book) => {
+  libraryArray.forEach((book, index) => {
     const boxDiv = document.createElement("div");
     boxDiv.className = 'box';
 
@@ -66,6 +66,22 @@ function displayBook() {
     titleP.className = 'title';
     titleP.textContent = book.title;
 
+    const topRow = document.createElement('div');
+    topRow.className = 'top-row';
+    const closeSpan = document.createElement('span');
+    closeSpan.className = 'close';
+    closeSpan.innerHTML = '&times;';
+
+    closeSpan.addEventListener('click', () => {
+      
+      libraryArray.splice(index, 1);
+      
+      displayBook();
+    });
+
+    topRow.appendChild(titleP);
+    topRow.appendChild(closeSpan);
+
     const switchLabel = document.createElement('label');
     switchLabel.className = 'switch';
     switchLabel.innerHTML = `
@@ -76,7 +92,7 @@ function displayBook() {
     
 
 
-    topDiv.appendChild(titleP);
+    topDiv.appendChild(topRow);
     topDiv.appendChild(switchLabel);
 
     const bottomDiv = document.createElement('div');

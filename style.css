@@ -153,6 +153,12 @@ body {
     justify-content: space-between;
 }
 
+.top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
 
 .top {
     padding: 15px 10px;
